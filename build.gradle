@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+}
+
+group 'org.chatwebsocket'
+version '1.0-SNAPSHOT'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+}
+
+ext.springVersion = '3.0.7'
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter-web:${springVersion}"
+    implementation "org.springframework.boot:spring-boot-starter-security:${springVersion}"
+    implementation "org.springframework.boot:spring-boot-starter-websocket:${springVersion}"
+    implementation "org.springframework.boot:spring-boot-starter-thymeleaf:${springVersion}"
+    implementation "org.springframework.kafka:spring-kafka:${springVersion}"
+
+    implementation 'org.webjars:sockjs-client:1.0.2'
+    implementation 'org.webjars:stomp-websocket:2.3.3'
+
+    compileOnly 'org.projectlombok:lombok:1.18.28'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
